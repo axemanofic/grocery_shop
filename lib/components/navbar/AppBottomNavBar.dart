@@ -11,7 +11,7 @@ class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key, required this.selectedIndex});
 
   @override
-  State<BottomNavBar> createState() => _BottomNavBarState(this.selectedIndex);
+  State<BottomNavBar> createState() => _BottomNavBarState(selectedIndex);
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
@@ -55,8 +55,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     setState(() {
                       _selectedIndex = 0;
                     });
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, '/', ((route) => false));
+                    Navigator.pushReplacementNamed(context, '/');
                   },
                   selected: _selectedIndex == 0,
                 ),

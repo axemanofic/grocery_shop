@@ -48,9 +48,10 @@ class _AppBottomNavItemState extends State<AppBottomNavItem> {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          splashColor: Colors.transparent,
-          highlightColor: Colors.transparent,
-          onTap: widget.selected ? null : widget.onPressed,
+          borderRadius: BorderRadius.circular(19.0),
+          splashColor: Theme.of(context).splashColor,
+          highlightColor: Theme.of(context).highlightColor,
+          onTap: widget.selected ? () {} : widget.onPressed,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

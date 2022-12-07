@@ -19,10 +19,9 @@ class AppAccountList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
+    return ListView.builder(
       physics: BouncingScrollPhysics(),
       itemBuilder: buildItem,
-      separatorBuilder: buildSeparator,
       itemCount: children.length,
     );
   }

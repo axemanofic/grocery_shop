@@ -17,32 +17,38 @@ class AppAccountListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                Container(
-                  height: 24,
-                  width: 24,
-                  child: SvgPicture.asset(iconPath),
-                  margin: EdgeInsets.only(right: 10.0),
-                ),
-                Text(
-                  label,
-                  style: TextStyle(
-                    fontFamily: 'Gilroy',
-                    // fontWeight: FontWeight.w600,
-                    fontSize: fontSize,
+    return Material(
+      color: Theme.of(context).backgroundColor,
+      child: InkWell(
+        splashColor: Theme.of(context).splashColor,
+        highlightColor: Theme.of(context).highlightColor,
+        onTap: () => Navigator.pushReplacementNamed(context, '/404'),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    height: 24,
+                    width: 24,
+                    margin: const EdgeInsets.only(right: 10.0),
+                    child: SvgPicture.asset(iconPath),
                   ),
-                ),
-              ],
-            ),
-            SvgPicture.asset(AppPathIcons.backArrowSvg),
-          ],
+                  Text(
+                    label,
+                    style: TextStyle(
+                      fontFamily: 'Gilroy',
+                      // fontWeight: FontWeight.w600,
+                      fontSize: fontSize,
+                    ),
+                  ),
+                ],
+              ),
+              SvgPicture.asset(AppPathIcons.backArrowSvg),
+            ],
+          ),
         ),
       ),
     );

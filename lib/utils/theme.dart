@@ -11,7 +11,14 @@ class ThemeApp {
       buttonTheme: const ButtonThemeData(
         buttonColor: AppColors.primaryColor,
       ),
-      textTheme: TextTheme(
+      listTileTheme: const ListTileThemeData(
+        iconColor: Colors.transparent,
+        textColor: Colors.transparent,
+        tileColor: Colors.transparent,
+        selectedColor: Colors.transparent,
+        selectedTileColor: Colors.transparent,
+      ),
+      textTheme: const TextTheme(
         headline6: TextStyle(
           fontFamily: 'Gilroy',
           fontSize: 20.0,
@@ -39,9 +46,10 @@ class ThemeApp {
         color: AppColors.primaryColor,
       ),
       dividerColor: Colors.grey,
-      splashColor: Colors.transparent,
-      highlightColor: Colors.transparent,
+      splashColor: AppColors.primaryColor[100],
+      highlightColor: AppColors.primaryColor[100],
       bottomAppBarColor: Colors.transparent,
+      scaffoldBackgroundColor: Colors.white,
     );
   }
 }

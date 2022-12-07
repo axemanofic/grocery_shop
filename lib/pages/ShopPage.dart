@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:grocery_store/components/global/AppButton.dart';
 import 'BasePage.dart';
 
-class ExplorePage extends BasePage {
-  @override
-  final int indexPage = 1;
-
-  const ExplorePage({super.key});
+class ShopPage extends BasePage {
+  const ShopPage({super.key});
 
   @override
   Widget buildBody(BuildContext context) {
@@ -15,18 +12,12 @@ class ExplorePage extends BasePage {
       children: [
         Container(
           alignment: Alignment.center,
-          child: Text("Explore Page!"),
+          child: Text("ShopPage Page!"),
         ),
         AppButton(
           buttonColor: Theme.of(context).primaryColor,
-          text: "Explore page",
-          textColor: Theme.of(context)
-              .textTheme
-              .bodyText1
-              ?.copyWith(
-                color: Colors.white,
-              )
-              .color,
+          text: "Catalog",
+          textColor: Colors.black,
         ),
       ],
     );

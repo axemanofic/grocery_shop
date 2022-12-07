@@ -20,4 +20,9 @@ class AppPathIcons {
   static String aboutSvg = "assets/svg/about.svg";
 
   static String pencilSvg = "assets/svg/pencil.svg";
+
+  static String heartSvg = "assets/svg/heart.svg";
+
+  static String plusSvg = "assets/svg/plus.svg";
+  static String minusSvg = "assets/svg/minus.svg";
 }
