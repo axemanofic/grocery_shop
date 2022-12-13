@@ -3,76 +3,59 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grocery_store/components/global/AppAccordion.dart';
 import 'package:grocery_store/components/global/AppButton.dart';
 import 'package:grocery_store/components/global/AppCounter.dart';
+import 'package:grocery_store/components/global/AppNutritionLabel.dart';
+import 'package:grocery_store/components/global/AppRatingStarLabel.dart';
+import 'package:grocery_store/components/product/detail/AppCarousel.dart';
+import 'package:grocery_store/components/product/detail/AppProductInfo.dart';
+import 'package:grocery_store/utils/colors.dart';
 import 'package:grocery_store/utils/icons.dart';
+import 'package:grocery_store/utils/rating.dart';
 import 'BasePage.dart';
 
 class ProductDetailPage extends BasePage {
-  final double _borderRadius = 25.0;
   final double _padding = 25.0;
 
   const ProductDetailPage({super.key});
 
   @override
   Widget buildBody(BuildContext context) {
-    return Container(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              width: double.infinity,
-              height: 500,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(_borderRadius),
-                    bottomRight: Radius.circular(_borderRadius),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const AppCarousel(),
+          Padding(
+            padding: EdgeInsets.all(_padding),
+            child: Column(
+              children: [
+                const AppProductInfo(),
+                const AppAccordion(
+                  header: Text("Product Detail"),
+                  content: Text(
+                    "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.",
                   ),
-                  image: DecorationImage(
-                    image: Image.network(
-                      "https://picsum.photos/200/300",
-                    ).image,
-                    fit: BoxFit.cover,
-                  ),
+                  isOpen: true,
                 ),
-              ),
+                const AppAccordion(
+                  header: Text("Product Detail"),
+                  label: AppNutritionLabel(),
+                  content: Text(
+                    "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.",
+                  ),
+                  isOpen: false,
+                ),
+                const AppAccordion(
+                  header: Text("Product Detail"),
+                  label: AppRatingStar(rating: Rating.three),
+                  content: Text(
+                    "Apples are nutritious. Apples may be good for weight loss. apples may be good for your heart. As part of a healtful and varied diet.",
+                  ),
+                  isOpen: false,
+                ),
+              ],
             ),
-            Padding(
-              padding: EdgeInsets.all(_padding),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Column(children: [Text("Name"), Text("Nutrition")]),
-                      SvgPicture.asset(AppPathIcons.heartSvg)
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      AppCounter(),
-                      Text("\$4999"),
-                    ],
-                  ),
-                  AppAccordion(
-                    header: Text("JOPA"),
-                    content: Text("JOPA"),
-                    isOpen: false,
-                  ),
-                  AppAccordion(
-                    header: Text("JOPA"),
-                    content: Text("JOPA"),
-                    isOpen: false,
-                  ),
-                  AppAccordion(
-                    header: Text("JOPA"),
-                    content: Text("JOPA"),
-                    isOpen: false,
-                  )
-                ],
-              ),
-            )
-            // AppButton()
-          ],
-        ),
+          )
+          // AppButton()
+        ],
       ),
     );
   }

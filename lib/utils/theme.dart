@@ -10,6 +10,7 @@ class ThemeApp {
       backgroundColor: Colors.white,
       buttonTheme: const ButtonThemeData(
         buttonColor: AppColors.primaryColor,
+        padding: EdgeInsets.all(0),
       ),
       listTileTheme: const ListTileThemeData(
         iconColor: Colors.transparent,
@@ -50,6 +51,14 @@ class ThemeApp {
       highlightColor: AppColors.primaryColor[100],
       bottomAppBarColor: Colors.transparent,
       scaffoldBackgroundColor: Colors.white,
+      expansionTileTheme: const ExpansionTileThemeData(
+        collapsedBackgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
+        collapsedIconColor: Colors.black,
+        collapsedTextColor: Colors.black,
+        textColor: Colors.black,
+        iconColor: Colors.black,
+      ),
     );
   }
 }

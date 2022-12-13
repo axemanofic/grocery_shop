@@ -17,4 +17,7 @@ class AppColors {
   static const Color defaultColor = Color(0xFF000000);
   static const Color colorShadow = Color(0xFFE5E5E5);
   static const Color optionalColor = Color(0xFFF2F3F2);
+
+  static const Color barColor = Color(0xFFB3B3B3);
+  static const Color starColor = Color(0xFFF3603F);
 }

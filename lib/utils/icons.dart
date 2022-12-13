@@ -8,6 +8,8 @@ class AppPathIcons {
   static String accountSvg = "assets/svg/account.svg";
 
   static String backArrowSvg = "assets/svg/back_arrow.svg";
+  static String downArrowSvg = "assets/svg/down_arrow.svg";
+
   static String logOutSvg = "assets/svg/log_out.svg";
 
   static String ordersSvg = "assets/svg/orders.svg";
@@ -25,4 +27,6 @@ class AppPathIcons {
 
   static String plusSvg = "assets/svg/plus.svg";
   static String minusSvg = "assets/svg/minus.svg";
+
+  static String starSvg = "assets/svg/star.svg";
 }
