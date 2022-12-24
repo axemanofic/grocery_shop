@@ -9,6 +9,7 @@ class AppPathIcons {
 
   static String backArrowSvg = "assets/svg/back_arrow.svg";
   static String downArrowSvg = "assets/svg/down_arrow.svg";
+  static String leftArrowSvg = "assets/svg/left_arrow.svg";
 
   static String logOutSvg = "assets/svg/log_out.svg";
 

@@ -23,7 +23,9 @@ class _AppFavoriteButtonState extends State<AppFavoriteButton> {
 
   _AppFavoriteButtonState(this._onPressed);
 
-  Color? _setColor() => _isSelected ? Colors.green : null;
+  Color? _setColor() => _isSelected
+      ? Theme.of(context).copyWith(primaryColor: Colors.red).primaryColor
+      : null;
 
   @override
   Widget build(BuildContext context) {

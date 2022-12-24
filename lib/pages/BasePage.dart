@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:grocery_store/components/navbar/AppBottomNavBar.dart';
+import 'package:grocery_store/utils/icons.dart';
 import 'package:grocery_store/utils/theme.dart';
 
 class BasePage extends StatelessWidget {
@@ -9,7 +11,7 @@ class BasePage extends StatelessWidget {
   const BasePage({super.key});
 
   double? _getHightToolbar() {
-    if (indexPage == 4) {
+    if (indexPage == 0 || indexPage == 4) {
       return 0;
     }
     return 40.0;
@@ -30,12 +32,24 @@ class BasePage extends StatelessWidget {
     return title;
   }
 
+  IconButton? _buildLeading(BuildContext context) {
+    // if (indexPage != 3 || indexPage != 2) {
+    //   return IconButton(
+    //     icon: SvgPicture.asset(AppPathIcons.leftArrowSvg),
+    //     onPressed: () {
+    //       Navigator.pop(context);
+    //     },
+    //   );
+    // }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
-    print(indexPage);
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
+        leading: _buildLeading(context),
         toolbarHeight: _getHightToolbar(),
         backgroundColor: Theme.of(context).backgroundColor,
         shadowColor: Theme.of(context)
@@ -45,9 +59,13 @@ class BasePage extends StatelessWidget {
         title: Center(child: Text(_getTitle())),
       ),
       body: buildBody(context),
-      bottomNavigationBar: BottomNavBar(
-        selectedIndex: indexPage,
-      ),
+      bottomNavigationBar: buildNavbar(context),
+    );
+  }
+
+  Widget buildNavbar(BuildContext context) {
+    return AppBottomNavBar(
+      selectedIndex: indexPage,
     );
   }
 

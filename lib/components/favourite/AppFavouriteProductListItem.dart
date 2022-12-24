@@ -28,7 +28,7 @@ class AppFavouriteProductListItem extends StatelessWidget {
       color: Theme.of(context).backgroundColor,
       child: InkWell(
         onTap: () {
-          Navigator.pushReplacement(
+          Navigator.push(
             context,
             GenerateRote.generateProductDetailPage(),
           );

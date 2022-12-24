@@ -18,7 +18,6 @@ class CartPage extends BasePage {
           child: Text("Account Page!"),
         ),
         AppButton(
-          buttonColor: Theme.of(context).primaryColor,
           text: "Catalog",
           textColor: Colors.black,
         ),

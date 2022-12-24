@@ -14,10 +14,9 @@ class UnknownPage extends BasePage {
       children: [
         Container(
           alignment: Alignment.center,
-          child: Text("UnknownPage Page!"),
+          child: const Text("UnknownPage Page!"),
         ),
         AppButton(
-          buttonColor: Theme.of(context).primaryColor,
           text: "Catalog",
           textColor: Colors.black,
           onPressed: () {

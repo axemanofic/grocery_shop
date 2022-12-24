@@ -18,7 +18,6 @@ class ExplorePage extends BasePage {
           child: Text("Explore Page!"),
         ),
         AppButton(
-          buttonColor: Theme.of(context).primaryColor,
           text: "Explore page",
           textColor: Theme.of(context)
               .textTheme

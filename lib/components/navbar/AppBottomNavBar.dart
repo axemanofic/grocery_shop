@@ -5,19 +5,19 @@ import 'package:grocery_store/components/navbar/AppBottomNavItem.dart';
 import 'package:grocery_store/utils/colors.dart';
 import 'package:grocery_store/utils/icons.dart';
 
-class BottomNavBar extends StatefulWidget {
+class AppBottomNavBar extends StatefulWidget {
   final int selectedIndex;
 
-  const BottomNavBar({super.key, required this.selectedIndex});
+  const AppBottomNavBar({super.key, required this.selectedIndex});
 
   @override
-  State<BottomNavBar> createState() => _BottomNavBarState(selectedIndex);
+  State<AppBottomNavBar> createState() => _AppBottomNavBarState(selectedIndex);
 }
 
-class _BottomNavBarState extends State<BottomNavBar> {
+class _AppBottomNavBarState extends State<AppBottomNavBar> {
   int _selectedIndex = 0;
 
-  _BottomNavBarState(this._selectedIndex);
+  _AppBottomNavBarState(this._selectedIndex);
 
   @override
   Widget build(BuildContext context) {

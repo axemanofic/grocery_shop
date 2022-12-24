@@ -15,7 +15,6 @@ class ShopPage extends BasePage {
           child: Text("ShopPage Page!"),
         ),
         AppButton(
-          buttonColor: Theme.of(context).primaryColor,
           text: "Catalog",
           textColor: Colors.black,
         ),

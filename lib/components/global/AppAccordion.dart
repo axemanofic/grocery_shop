@@ -10,13 +10,13 @@ import 'package:grocery_store/utils/icons.dart';
 class AppAccordion extends StatefulWidget {
   final bool isOpen;
   final Widget header;
-  final Text content;
+  final Text? content;
   final Widget? label;
 
   const AppAccordion({
     super.key,
     required this.header,
-    required this.content,
+    this.content,
     required this.isOpen,
     this.label,
   });
@@ -27,7 +27,7 @@ class AppAccordion extends StatefulWidget {
 
 class _AppAccordionState extends State<AppAccordion> {
   Widget _header = const Text("Default header");
-  Text _content = const Text("Default content");
+  Text? _content = const Text("Default content");
   bool _isOpen = false;
   Widget? _label;
 

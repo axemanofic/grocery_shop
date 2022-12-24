@@ -83,7 +83,6 @@ class FavouritePage extends BasePage {
           ),
         ),
         AppButton(
-          buttonColor: Theme.of(context).primaryColor,
           text: "Catalog",
           textColor: Colors.black,
           onPressed: () {},

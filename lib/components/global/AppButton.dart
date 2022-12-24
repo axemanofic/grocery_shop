@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_launcher_icons/main.dart';
 
 class AppButton extends StatelessWidget {
-  final Color buttonColor;
   final String text;
   final Color? textColor;
+  final EdgeInsetsGeometry padding;
   final Function()? onPressed;
+  final double? hight;
 
   const AppButton({
     super.key,
-    required this.buttonColor,
     required this.text,
     required this.textColor,
+    this.padding = const EdgeInsets.all(20.0),
     this.onPressed,
+    this.hight,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
+      height: hight,
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: padding,
         child: Material(
           color: Theme.of(context).primaryColor,
           borderRadius: const BorderRadius.all(Radius.circular(19.0)),
@@ -30,7 +34,7 @@ class AppButton extends StatelessWidget {
             onTap: onPressed,
             child: Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Container(
+              child: SizedBox(
                 child: Center(
                   child: Text(
                     text,
